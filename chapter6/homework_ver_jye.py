@@ -6,8 +6,9 @@ sys.stderr = io.TextIOWrapper(sys.stderr.detach(), encoding = 'utf-8')
 
 
 class Character:
-    def __init__(self):
+    def __init__(self, charname):
         # default setting
+        self.charname = charname
         self.charlevel = 1
         self.charexp = 0
         self.classchoice = "초보자"
@@ -17,8 +18,7 @@ class Character:
 
         self.skillset = []
 
-    def create_char(self, charname):
-        self.charname = charname
+    def create_char(self):
         print("\n{} 님, 당신의 레벨은 {}, 클래스는 {} 입니다.".format(self.charname, self.charlevel, self.classchoice))
 
     def levelup(self):
@@ -37,7 +37,7 @@ class Character:
 
 class Warrior(Character):
     def __init__(self,Character):
-        super().__init__()
+        super().__init__(Character.charname)
         self.skill = "강하게 내려찍기"
         self.weapon = "대검"
         self.exp = 10
@@ -46,16 +46,16 @@ class Warrior(Character):
 
 class knight(Character):
     def __init__(self,Character):
-        super().__init__()
+        super().__init__(Character.charname)
         self.skill = "정권찌르기"
         self.weapon = "한손검"
         self.exp = 10
         self.classchoice = Character.classchoice
         self.charlevel = Character.charlevel
 
-class knight(Character):
+class magician(Character):
     def __init__(self,Character):
-        super().__init__()
+        super().__init__(Character.charname)
         self.skill = "벼락치기"
         self.weapon = "스태프"
         self.exp = 10
@@ -64,7 +64,7 @@ class knight(Character):
 
 class axler(Character):
     def __init__(self,Character):
-        super().__init__()
+        super().__init__(Character.charname)
         self.skill = "도끼날리기"
         self.weapon = "도끼"
         self.exp = 10
@@ -183,8 +183,8 @@ if __name__ == "__main__":
             print(e)
             continue
 
-        myChar = Character()
-        myChar.create_char(charname)
+        myChar = Character(charname)
+        myChar.create_char()
 
         print("이블린 서버에 입장했습니다.\n")
         break
@@ -216,19 +216,19 @@ if __name__ == "__main__":
 
                     if myClass == '1':
                         myChar = Warrior(myChar)
-                        myChar.create_char(charname)
+                        myChar.create_char()
 
                     elif myClass == '2':
                         myChar = knight(myChar)
-                        myChar.create_char(charname)
+                        myChar.create_char()
 
                     elif myClass == '3':
                         myChar = magician(myChar)
-                        myChar.create_char(charname)
+                        myChar.create_char()
 
                     elif myClass == '4':
                         myChar = axler(myChar)
-                        myChar.create_char(charname)
+                        myChar.create_char()
 
                     else:
                         print("잘못된 입력입니다.")
