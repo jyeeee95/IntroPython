@@ -43,6 +43,7 @@ class Warrior(Character):
         self.exp = 10
         self.classchoice = Character.classchoice
         self.charlevel = Character.charlevel
+        self.charexp = Character.charexp
 
 class knight(Character):
     def __init__(self,Character):
@@ -52,6 +53,7 @@ class knight(Character):
         self.exp = 10
         self.classchoice = Character.classchoice
         self.charlevel = Character.charlevel
+        self.charexp = Character.charexp
 
 class magician(Character):
     def __init__(self,Character):
@@ -61,6 +63,7 @@ class magician(Character):
         self.exp = 10
         self.classchoice = Character.classchoice
         self.charlevel = Character.charlevel
+        self.charexp = Character.charexp
 
 class axler(Character):
     def __init__(self,Character):
@@ -70,6 +73,7 @@ class axler(Character):
         self.exp = 10
         self.classchoice = Character.classchoice
         self.charlevel = Character.charlevel
+        self.charexp = Character.charexp
 
 
 
